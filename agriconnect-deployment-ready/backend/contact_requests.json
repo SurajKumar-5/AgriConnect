@@ -1,0 +1,32 @@
+[
+  {
+    "id": "REQ-A1A05AE022",
+    "farmerName": "Test Farmer",
+    "farmerEmail": "testfarmer1@gmail.com",
+    "buyerId": 1,
+    "buyerName": "FreshFarm Foods",
+    "buyerLocation": "Pune, Maharashtra",
+    "crop": "Tomato",
+    "quantity": "500 kg",
+    "offeredPrice": "₹30–35/kg",
+    "status": "Accepted",
+    "createdAt": "2026-09-07T17:22:29.999907",
+    "updatedAt": "2026-09-07T17:39:05.696515",
+    "dealId": "DEAL-13A2B46214"
+  },
+  {
+    "id": "REQ-159D343DAC",
+    "farmerName": "Test Farmer",
+    "farmerEmail": "testfarmer1@gmail.com",
+    "buyerId": 2,
+    "buyerName": "Nashik Agro Traders",
+    "buyerLocation": "Nashik, Maharashtra",
+    "crop": "Onion",
+    "quantity": "1000 kg",
+    "offeredPrice": "₹26–30/kg",
+    "status": "Accepted",
+    "createdAt": "2026-09-08T00:20:31.132716",
+    "updatedAt": "2026-09-08T00:24:16.578957",
+    "dealId": "DEAL-2CB3EA4AE9"
+  }
+]

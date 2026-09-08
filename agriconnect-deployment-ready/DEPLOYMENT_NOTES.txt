@@ -1,0 +1,12 @@
+AgriConnect deployment copy.
+
+Frontend: VITE_API_URL must point to the deployed FastAPI URL.
+Backend: set DATA_GOV_API_KEY as a hosting-provider environment variable.
+Do not commit or upload real API keys.
+
+Render backend start command:
+uvicorn app:app --host 0.0.0.0 --port $PORT
+
+Vercel frontend build command:
+npm run build
+Output directory: dist

@@ -1,0 +1,634 @@
+/* =========================================================
+   AGRICONNECT — MARKET PRICES
+   ========================================================= */
+
+.market-page {
+  min-height: calc(100vh - 90px);
+  background: #f4faf6;
+  padding: 64px 6%;
+  color: #123d25;
+  box-sizing: border-box;
+}
+
+.market-page *,
+.market-page *::before,
+.market-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.market-hero {
+  max-width: 900px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.market-label {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: #16813c;
+}
+
+.market-hero h1 {
+  margin: 0;
+
+  font-size: clamp(36px, 5vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+
+  color: #102f1d;
+}
+
+.market-hero p {
+  max-width: 680px;
+  margin: 18px auto 22px;
+
+  font-size: 17px;
+  line-height: 1.65;
+
+  color: #687970;
+}
+
+.market-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 9px 16px;
+
+  border: 1px solid #d5eadb;
+  border-radius: 999px;
+
+  background: #e7f6eb;
+  color: #16783a;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+  background: #22a447;
+
+  box-shadow: 0 0 0 4px rgba(34, 164, 71, 0.12);
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.market-loading {
+  max-width: 600px;
+  margin: 70px auto;
+
+  padding: 52px 35px;
+
+  text-align: center;
+
+  background: #ffffff;
+  border: 1px solid #dce8df;
+  border-radius: 22px;
+
+  box-shadow: 0 12px 35px rgba(25, 75, 42, 0.06);
+}
+
+.market-spinner {
+  width: 46px;
+  height: 46px;
+
+  margin: 0 auto 20px;
+
+  border: 4px solid #dce8df;
+  border-top-color: #16813c;
+
+  border-radius: 50%;
+
+  animation: market-spin 0.8s linear infinite;
+}
+
+.market-loading h2 {
+  margin: 0 0 8px;
+  color: #173d27;
+}
+
+.market-loading p {
+  margin: 0;
+  color: #718078;
+}
+
+@keyframes market-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.market-error {
+  max-width: 600px;
+  margin: 50px auto;
+
+  padding: 48px 35px;
+
+  text-align: center;
+
+  background: #ffffff;
+  border: 1px solid #f0cccc;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(100, 40, 40, 0.05);
+}
+
+.error-icon {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.market-error h2 {
+  margin: 0 0 8px;
+  color: #a33a3a;
+}
+
+.market-error p {
+  margin: 0 0 22px;
+  color: #69766f;
+}
+
+.retry-button {
+  border: none;
+
+  background: #18813d;
+  color: #ffffff;
+
+  padding: 13px 25px;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.retry-button:hover {
+  background: #126b32;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MARKET GRID
+   ========================================================= */
+
+.market-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 26px;
+}
+
+
+/* =========================================================
+   MARKET CARD
+   ========================================================= */
+
+.market-card {
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #dce8df;
+  border-radius: 22px;
+
+  padding: 28px;
+
+  box-shadow:
+    0 8px 25px rgba(25, 75, 42, 0.055);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.market-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #c9dfd0;
+
+  box-shadow:
+    0 18px 40px rgba(25, 75, 42, 0.11);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.market-card-top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.crop-title {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.crop-emoji {
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #f1f8f3;
+
+  font-size: 27px;
+}
+
+.crop-title h2 {
+  margin: 0;
+
+  font-size: 24px;
+  line-height: 1.2;
+
+  color: #102d1c;
+}
+
+.trend-badge {
+  flex-shrink: 0;
+
+  padding: 8px 12px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.trend-badge.rising {
+  background: #def4e4;
+  color: #15803b;
+}
+
+.trend-badge.stable {
+  background: #eef2ef;
+  color: #52615a;
+}
+
+
+/* =========================================================
+   MARKET LOCATION
+   ========================================================= */
+
+.market-location {
+  margin: 16px 0 22px;
+
+  color: #64746b;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MODAL PRICE
+   ========================================================= */
+
+.modal-price-box {
+  padding: 24px 20px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f1f8f3,
+      #edf7f0
+    );
+
+  border: 1px solid #e0eee4;
+  border-radius: 17px;
+}
+
+.modal-price-box span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #68786f;
+
+  font-size: 14px;
+}
+
+.modal-price-box strong {
+  display: block;
+
+  font-size: 35px;
+  line-height: 1.1;
+
+  color: #14803b;
+}
+
+
+/* =========================================================
+   MIN / MAX RANGE
+   ========================================================= */
+
+.price-range {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  margin-top: 14px;
+}
+
+.range-box {
+  padding: 16px 12px;
+
+  text-align: center;
+
+  background: #fafcfb;
+
+  border: 1px solid #f0f3f1;
+
+  border-radius: 13px;
+}
+
+.range-box span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #718078;
+
+  font-size: 12px;
+}
+
+.range-box strong {
+  color: #17251d;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+   ========================================================= */
+
+.market-card-footer {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 20px;
+  padding-top: 18px;
+
+  border-top: 1px solid #e5ece7;
+}
+
+.market-card-footer span {
+  min-width: 0;
+
+  color: #718078;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.market-card-footer button {
+  flex-shrink: 0;
+
+  padding: 5px 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #14803b;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.market-card-footer button:hover {
+  color: #0f662f;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   INFORMATION BOX
+   ========================================================= */
+
+.market-info {
+  max-width: 1200px;
+
+  margin: 48px auto 0;
+
+  padding: 25px 30px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  background: #e8f6eb;
+
+  border: 1px solid #d5eadb;
+  border-left: 5px solid #1b8a43;
+
+  border-radius: 15px;
+}
+
+.info-icon {
+  flex-shrink: 0;
+
+  font-size: 30px;
+}
+
+.market-info h2 {
+  margin: 0 0 7px;
+
+  font-size: 21px;
+  color: #173d27;
+}
+
+.market-info p {
+  margin: 0;
+
+  color: #5f7067;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .market-page {
+    padding: 50px 4%;
+  }
+
+  .market-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .market-page {
+    padding: 38px 18px;
+  }
+
+  .market-hero {
+    margin-bottom: 38px;
+  }
+
+  .market-hero h1 {
+    font-size: 36px;
+    letter-spacing: -0.8px;
+  }
+
+  .market-hero p {
+    font-size: 15px;
+  }
+
+  .market-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .market-card {
+    padding: 22px;
+    border-radius: 19px;
+  }
+
+  .crop-title h2 {
+    font-size: 22px;
+  }
+
+  .crop-emoji {
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+
+  .trend-badge {
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+
+  .modal-price-box {
+    padding: 21px 18px;
+  }
+
+  .modal-price-box strong {
+    font-size: 32px;
+  }
+
+  .market-card-footer {
+    align-items: flex-start;
+  }
+
+  .market-info {
+    padding: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .market-page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .market-card {
+    padding: 19px;
+  }
+
+  .market-card-top {
+    align-items: flex-start;
+  }
+
+  .trend-badge {
+    font-size: 10px;
+  }
+
+  .market-card-footer {
+    flex-direction: column;
+  }
+
+  .market-card-footer button {
+    align-self: flex-start;
+  }
+
+}

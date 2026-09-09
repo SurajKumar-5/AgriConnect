@@ -1,0 +1,593 @@
+.farmer-dashboard {
+  min-height: calc(100vh - 80px);
+  padding: 40px 6%;
+  background: #f6f8fb;
+  color: #172033;
+}
+
+/* HERO */
+
+.farmer-dashboard-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 34px 38px;
+  margin-bottom: 28px;
+  background: linear-gradient(135deg, #0b2d5c, #164b88);
+  border-radius: 18px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(20, 50, 90, 0.15);
+}
+
+.farmer-dashboard-label {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  opacity: 0.8;
+}
+
+.farmer-dashboard-hero h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+.farmer-dashboard-hero p {
+  margin: 0;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.farmer-refresh-button {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.farmer-refresh-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.farmer-refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ERROR */
+
+.farmer-error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  background: #fff4f4;
+  border: 1px solid #ffd4d4;
+  border-radius: 10px;
+  color: #a12626;
+}
+
+.farmer-error button {
+  margin-left: auto;
+  border: none;
+  background: #a12626;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* STATS */
+
+.farmer-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.farmer-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e6eaf0;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(20, 40, 70, 0.05);
+}
+
+.farmer-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 11px;
+  background: #eef4fb;
+  font-size: 23px;
+}
+
+.farmer-stat-card span {
+  display: block;
+  margin-bottom: 4px;
+  color: #697386;
+  font-size: 13px;
+}
+
+.farmer-stat-card strong {
+  display: block;
+  font-size: 25px;
+  color: #102c55;
+}
+
+/* SECTIONS */
+
+.farmer-section {
+  margin-bottom: 38px;
+}
+
+.farmer-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.farmer-section-heading h2 {
+  margin: 0 0 5px;
+  font-size: 24px;
+  color: #122d54;
+}
+
+.farmer-section-heading p {
+  margin: 0;
+  color: #70798a;
+  font-size: 14px;
+}
+
+.farmer-section-count {
+  min-width: 35px;
+  padding: 7px 12px;
+  text-align: center;
+  border-radius: 20px;
+  background: #e9f0f8;
+  color: #164b88;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* REQUESTS */
+
+.farmer-request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.farmer-request-card {
+  padding: 22px;
+  background: white;
+  border: 1px solid #e5e9ef;
+  border-radius: 15px;
+  box-shadow: 0 4px 14px rgba(20, 40, 70, 0.04);
+}
+
+.farmer-request-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.farmer-request-title {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.farmer-buyer-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #eaf1f9;
+  color: #164b88;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.farmer-request-title h3 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  color: #172b4d;
+}
+
+.farmer-request-title p {
+  margin: 0;
+  color: #7b8494;
+  font-size: 13px;
+}
+
+.farmer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-pending {
+  background: #fff6df;
+  color: #966600;
+}
+
+.status-accepted {
+  background: #e7f7ee;
+  color: #19733e;
+}
+
+.status-rejected,
+.status-cancelled {
+  background: #fff0f0;
+  color: #a83232;
+}
+
+.status-completed {
+  background: #e9f0ff;
+  color: #27579b;
+}
+
+.farmer-request-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 18px 0;
+}
+
+.farmer-request-details span,
+.farmer-deal-details span,
+.farmer-deal-mini span {
+  display: block;
+  margin-bottom: 5px;
+  color: #7c8492;
+  font-size: 12px;
+}
+
+.farmer-request-details strong,
+.farmer-deal-details strong,
+.farmer-deal-mini strong {
+  color: #1c2d46;
+  font-size: 14px;
+}
+
+/* ACCEPTED */
+
+.farmer-accepted-box {
+  padding: 16px;
+  margin-top: 4px;
+  border: 1px solid #ccebd8;
+  border-radius: 10px;
+  background: #f2fbf5;
+}
+
+.farmer-accepted-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #19733e;
+}
+
+.farmer-accepted-heading span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #d7f1e1;
+  font-size: 12px;
+}
+
+.farmer-accepted-box p {
+  margin: 0;
+  color: #587063;
+  font-size: 13px;
+}
+
+.farmer-deal-mini {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* REJECTED */
+
+.farmer-rejected-box {
+  padding: 12px 14px;
+  margin-top: 4px;
+  border-radius: 9px;
+  background: #fff4f4;
+  color: #9d3838;
+  font-size: 13px;
+}
+
+/* REQUEST FOOTER */
+
+.farmer-request-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 17px;
+  padding-top: 13px;
+  border-top: 1px solid #edf0f4;
+  color: #89919e;
+  font-size: 11px;
+}
+
+.farmer-request-footer strong {
+  color: #5d6877;
+}
+
+/* DEALS */
+
+.farmer-deals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.farmer-deal-card {
+  padding: 22px;
+  background: white;
+  border: 1px solid #e4e8ee;
+  border-radius: 15px;
+  box-shadow: 0 4px 14px rgba(20, 40, 70, 0.04);
+}
+
+.farmer-deal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.farmer-deal-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #8490a1;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.farmer-deal-header h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #17345f;
+}
+
+.farmer-deal-buyer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+}
+
+.farmer-deal-buyer span {
+  display: block;
+  margin-bottom: 3px;
+  color: #89919e;
+  font-size: 11px;
+}
+
+.farmer-deal-buyer strong {
+  display: block;
+  color: #1c2d46;
+  font-size: 15px;
+}
+
+.farmer-deal-buyer small {
+  display: block;
+  margin-top: 3px;
+  color: #7b8492;
+  font-size: 11px;
+}
+
+.farmer-deal-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 17px 0;
+  border-top: 1px solid #edf0f4;
+}
+
+.farmer-deal-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 14px;
+  border-top: 1px solid #edf0f4;
+  color: #89919e;
+  font-size: 11px;
+}
+
+.farmer-active-message,
+.farmer-completed-message,
+.farmer-cancelled-message {
+  margin-top: 15px;
+  padding: 11px 13px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.farmer-active-message {
+  background: #eef8f2;
+  color: #237346;
+}
+
+.farmer-completed-message {
+  background: #eef3fb;
+  color: #315b91;
+}
+
+.farmer-cancelled-message {
+  background: #fff2f2;
+  color: #9d3838;
+}
+
+/* EMPTY */
+
+.farmer-empty-state {
+  padding: 45px 25px;
+  text-align: center;
+  background: white;
+  border: 1px solid #e5e9ef;
+  border-radius: 15px;
+}
+
+.farmer-empty-icon {
+  margin-bottom: 12px;
+  font-size: 38px;
+}
+
+.farmer-empty-state h2,
+.farmer-empty-state h3 {
+  margin: 0 0 8px;
+  color: #1c3152;
+}
+
+.farmer-empty-state p {
+  max-width: 520px;
+  margin: 0 auto 18px;
+  color: #7a8391;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.farmer-primary-button {
+  border: none;
+  padding: 11px 18px;
+  border-radius: 8px;
+  background: #164b88;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.farmer-primary-button:hover {
+  background: #0d396c;
+}
+
+/* LOADING */
+
+.farmer-loading {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.farmer-spinner {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 14px;
+  border: 4px solid #dce5ef;
+  border-top-color: #164b88;
+  border-radius: 50%;
+  animation: farmerSpin 0.8s linear infinite;
+}
+
+.farmer-loading p {
+  margin: 0;
+  color: #778191;
+  font-size: 14px;
+}
+
+@keyframes farmerSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .farmer-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .farmer-deals-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 750px) {
+  .farmer-dashboard {
+    padding: 25px 4%;
+  }
+
+  .farmer-dashboard-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 27px;
+  }
+
+  .farmer-dashboard-hero h1 {
+    font-size: 26px;
+  }
+
+  .farmer-refresh-button {
+    width: 100%;
+  }
+
+  .farmer-request-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .farmer-request-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .farmer-deal-mini {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .farmer-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .farmer-request-details {
+    grid-template-columns: 1fr;
+  }
+
+  .farmer-request-footer {
+    flex-direction: column;
+  }
+
+  .farmer-deal-details {
+    grid-template-columns: 1fr;
+  }
+
+  .farmer-section-heading {
+    align-items: flex-start;
+  }
+}

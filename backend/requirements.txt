@@ -4,6 +4,7 @@ python-multipart
 pillow
 requests
 python-dotenv
-transformers
-torch
-torchvision
+transformers==4.57.1
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.6.0+cpu

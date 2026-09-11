@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import API_URL from "./config";
 
 function CropHealth() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [preview, setPreview] = useState("");
@@ -466,7 +466,7 @@ function CropHealth() {
 
           <div className="crop-result-grid">
 
-            {/* CROP */}
+            {/* AI PREDICTION */}
 
             <div className="result-card">
 
@@ -475,7 +475,7 @@ function CropHealth() {
               </span>
 
               <span className="result-label">
-                {t("cropHealth.cropIdentified")}
+                AI Prediction
               </span>
 
               <strong className="result-value">
@@ -717,13 +717,10 @@ function CropHealth() {
                           display: "flex",
                           alignItems: "center",
                           gap: "12px",
-                          padding:
-                            "10px 0",
+                          padding: "10px 0",
                           borderBottom:
                             index <
-                            result.predictions
-                              .length -
-                              1
+                            result.predictions.length - 1
                               ? "1px solid #e7eee9"
                               : "none",
                         }}
@@ -740,10 +737,8 @@ function CropHealth() {
                                 ? "#e4f4e7"
                                 : "#f1f4f2",
                             display: "flex",
-                            alignItems:
-                              "center",
-                            justifyContent:
-                              "center",
+                            alignItems: "center",
+                            justifyContent: "center",
                             fontSize: "13px",
                             fontWeight: "700",
                           }}
@@ -759,10 +754,8 @@ function CropHealth() {
 
                           <strong
                             style={{
-                              display:
-                                "block",
-                              fontSize:
-                                "14px",
+                              display: "block",
+                              fontSize: "14px",
                             }}
                           >
                             {prediction.label}
@@ -770,15 +763,11 @@ function CropHealth() {
 
                           <div
                             style={{
-                              marginTop:
-                                "6px",
+                              marginTop: "6px",
                               height: "5px",
-                              background:
-                                "#e5ebe7",
-                              borderRadius:
-                                "10px",
-                              overflow:
-                                "hidden",
+                              background: "#e5ebe7",
+                              borderRadius: "10px",
+                              overflow: "hidden",
                             }}
                           >
 
@@ -794,10 +783,8 @@ function CropHealth() {
                                   100
                                 )}%`,
                                 height: "100%",
-                                background:
-                                  "#21863b",
-                                borderRadius:
-                                  "10px",
+                                background: "#21863b",
+                                borderRadius: "10px",
                               }}
                             />
 
@@ -807,12 +794,9 @@ function CropHealth() {
 
                         <strong
                           style={{
-                            minWidth:
-                              "55px",
-                            textAlign:
-                              "right",
-                            fontSize:
-                              "14px",
+                            minWidth: "55px",
+                            textAlign: "right",
+                            fontSize: "14px",
                           }}
                         >
                           {prediction.confidence}%
